@@ -1,6 +1,16 @@
+@import "libs/variables.scss";
+@import "libs/reset.scss";
+@import "libs/mixins.scss";
+
 body {
-    background-color: blue;
-    p {
-        color:brown;
+    h1{
+        color: $color-secondary;
     }
+    h3 {
+        color: yellow;
+    }
+}
+
+header {
+    color:brown;
 }
