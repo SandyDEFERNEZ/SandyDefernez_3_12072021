@@ -40,21 +40,29 @@ header {
 }
 
 main {
-            
+    display: block;
+          
     form {
         display: block;
-
+        border: 1px solid hsl(0, 7%, 92%);
+        background-color: hsl(0, 12%, 89%);
+        padding: 10px;
+        
         .position {
             display: flex;
-            justify-content: center;
-            align-content: space-between;
-            border: 1px solid hsl(0, 6%, 80%);
-            background-color: hsl(0, 6%, 80%);
+            flex-wrap: nowrap;
+            justify-content: space-evenly;
+            align-content: space-around;
+            align-items: stretch;
+            padding: 0px 30px;
 
-            .input {
+            input {
+                color: black;
                 display:flex;
                 align-content: space-between;
-                background-color: hsl(0, 6%, 80%);
+                background-color: hsl(0, 12%, 89%);
+                font-weight: bold;
+                border: initial;
             }
         }
     }
@@ -67,7 +75,7 @@ main {
         align-items: center;
         align-content: center;
         padding : 25px;
-
+        background-color: rgb(240, 233, 233);
         h1 {
             text-align: center;
             font-weight: bold;
@@ -79,21 +87,30 @@ main {
 
         }
         button{
+            display: inline-block;
+            width: 70%;
+            height: 60px;
+            border-radius: 60px;
+            border: 2px solid rgb(218, 214, 214);
+            background-color: #FF79DA;
+            padding: 15px;
             span {
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 font-size: 14px;
                 color:#fff;
-                background-color: #FF79DA;
-                border-radius: 20px;
-                box-shadow: 1px 1px 1px rgb(184, 182, 182);
-            }
+            }    
         }
     }
 
     .fonction {
         display: block;
+        margin: 0px 0px 40px 0px;
 
         h2 {
-            margin: 10px; 
+            margin: 10px;
+            padding: 20px 15px; 
         }
 
         .choix {
@@ -123,15 +140,17 @@ main {
             .icon {
                 display: flex;
                 flex-wrap: nowrap;
-                border: 1px solid #000;
-                background-color: rgb(202, 199, 199);
+                background-color: rgb(238, 236, 236);
+                box-shadow: 0.5em 0.5em 1em rgb(155 153 153 / 30%);
                 border-radius: 10px;
-                justify-content: space-evenly;
-                padding: 15px 10px;
-                margin: 10px 10px 10px 30px;
+                justify-content: center;
+                align-items: center;
+                padding: 15px 20px 15px 10px;
+                margin: 10px 10px 30px 30px;
 
                 i {
                     padding: 0px 40px;
+                    color: #9356dc;
                 }
 
                 p {
@@ -145,14 +164,17 @@ main {
     .restaurant {
         display: block;
         justify-content: center;
-        background-color: rgb(212, 209, 209);
-        border: 1px solid rgb(153, 149, 149);
+        background-color: rgb(238, 236, 236);
+        border: 1px solid rgb(238, 236, 236);
+        padding: 20px 0px 30px 10px;
+
         h2 {
             margin: 20px;
         }
+        
         .picture{
             display: block;
-            height: 160px;
+            height: 180px;
             margin: 10px 20px;
             background-color: #fff;
             position: relative;
@@ -166,7 +188,7 @@ main {
                 .cadre {
                     display: flex;
                     width: 100%;
-                    height: 100px;
+                    height: 130px;
                     border-top-right-radius: 20px;
                     border-top-left-radius: 20px;
                     overflow: hidden;
