@@ -106,20 +106,30 @@ main {
         }
 
         .plat {
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: column;
             color: #000;
             border-radius: 25px;
             background-color: #fff;
             padding: 10px;
             margin: 0px 10px 20px 0px;
-            h2 {
+            
+            h3 {
                 font-weight: bold;
             }
-            p {
+            .ingredient {
                 display: flex;
-                flex-wrap: nowrap;
+                flex-direction: row;
+            }
+            .prix {
+                display: flex;
+                
             }
 
-            .cercle {width: 25px;
+
+            .cercle {
+                width: 25px;
                 height: 25px;
                 border: 1px solid rgb(82, 240, 129);
                 border-top-right-radius: 25px;
@@ -132,15 +142,20 @@ main {
     section.commande {
         display: block;
         button{
-            display: flex;
-            flex-wrap: nowrap;
-            justify-content: center;
+            display: inline-block;
+            width: 70%;
+            height: 60px;
+            border-radius: 60px;
+            border: 2px solid #dad6d6;
+            background-color: #FF79DA;
+            box-shadow: 1px 1px 1px rgb(184, 182, 182);
+            margin : 0px 40px;
             span {
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 font-size: 14px;
-                color:#fff;
-                background-color: #FF79DA;
-                border-radius: 50px;
-                box-shadow: 1px 1px 1px rgb(184, 182, 182);
+                color: #fff;           
             }
         }
     }
@@ -170,16 +185,6 @@ footer {
                 align-items: center;
                     
                 a {
-                    color:#fff;
-                    padding: 0px 10px;
-                }
-
-                #proposition {            
-                    color:#fff;
-                    padding: 0px 10px;
-                }
-
-                #partenariat {
                     color:#fff;
                     padding: 0px 10px;
                 }
