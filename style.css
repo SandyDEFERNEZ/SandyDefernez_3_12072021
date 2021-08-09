@@ -42,6 +42,56 @@ header .header a .img {
 main {
   display: block;
 }
+main section.chargement {
+  height: 150px;
+  line-height: 150px;
+  text-align: center;
+  font-size: 30px;
+}
+main section.chargement .loader {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}
+main section.chargement .loader-circles {
+  border-radius: 50%;
+  border: 6px solid #999;
+}
+main section.chargement .loader-circles::after {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  bottom: -6px;
+  right: -6px;
+  border-radius: 50px;
+  border: 6px solid transparent;
+  border-top-color: #fff;
+  -webkit-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
 main form {
   display: block;
   border: 1px solid #ece9e9;
