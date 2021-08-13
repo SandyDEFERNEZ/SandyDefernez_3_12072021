@@ -85,6 +85,7 @@ main {
         margin: 0px 10px 20px 0px;
         border-top-left-radius: 25px;
         border-top-right-radius: 25px;
+
         .titre {
             display: flex;
             flex-wrap: nowrap;
@@ -113,44 +114,78 @@ main {
             color: #000;
             border-radius: 25px;
             background-color: #fff;
-            padding: 10px;
+            padding: 20px;
             margin: 0px 10px 20px 0px;
+            position: relative;
             
             h3 {
                 font-weight: bold;
-            }
-            .ingredient {
-                display: flex;
-                flex-direction: row;
-            }
-            .prix {
-                display: flex;
-                
+                padding-bottom: 10px;
             }
 
+            .alignement {
+                display: flex;
+
+                .ingredient {
+                    display: flex;
+                    flex-direction: row;
+                    
+                }
+                
+                .prix {
+                    display: flex;
+                    padding-right: 40px;
+                    align-self: flex-end;
+                }
+            }
 
             .cercle {
-                width: 25px;
-                height: 25px;
-                border: 1px solid rgb(82, 240, 129);
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                width: 70px;
+                height: 90px;
+                border: 1px solid rgb(141, 247, 206);
                 border-top-right-radius: 25px;
                 border-bottom-right-radius: 25px;
-                background-color: rgb(80, 206, 80);
+                background-color: rgb(141, 247, 206);
+                position: absolute;
+                top: 0px;
+                right: 0px;
+                bottom: 0px;
+
+                .fa {
+                    color: transparent;
+
+                    .fa-check-circle {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+          
+                    }
+                }
             }
         }
     }
 
     section.commande {
         display: block;
+
         button{
-            display: inline-block;
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: nowrap;
             width: 70%;
             height: 60px;
             border-radius: 60px;
             border: 2px solid #dad6d6;
-            background-color: #FF79DA;
+            background-image: radial-gradient(circle at 53.14% 14.13%, #ff66f8 0, #ff54f7 25%, #f23cf2 50%, #ca26ed 75%, #a21fec 100%);
             box-shadow: 1px 1px 1px rgb(184, 182, 182);
-            margin : 0px 40px;
+            margin: 0px 130px;
+
             span {
                 display: flex;
                 justify-content: center;
@@ -171,6 +206,7 @@ footer {
         font-family: shrikhand;
         font-size: 18px;
         color: #fff;
+        margin-bottom: 10px;
     }
        
     nav {
@@ -187,7 +223,11 @@ footer {
                     
                 a {
                     color:#fff;
-                    padding: 0px 10px;
+
+                    i {
+                        margin-right: 10px;
+                    }
+
                 }
             }
         }

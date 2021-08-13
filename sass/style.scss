@@ -60,21 +60,39 @@ main {
     
         .loader-circles {
             border-radius: 50%;
-            border: 6px solid #999;
+            border: 3px solid #999;
+            border-top-color: #fff;
+            -webkit-animation:spin 1s linear infinite;
+            animation:spin 1s linear infinite;
         }
-            
             .loader-circles::after{
                 content: '';
                 position: absolute;
-                top: -6px; 
-                left: -6px;
-                bottom: -6px;
-                right: -6px;
+                top: 5px; 
+                left: 5px;
+                bottom: 5px;
+                right: 5px;
                 border-radius: 50px;
-                border: 6px solid transparent;
+                border: 3px solid #FF79DA;
                 border-top-color: #fff;
-                -webkit-animation:spin 1s linear infinite;
-                animation:spin 1s linear infinite;
+                opacity:0.8;
+                -webkit-animation:spin 5s linear infinite;
+                animation:spin 5s linear infinite;
+            }
+
+            .loader-circles::before{
+                content: '';
+                position: absolute;
+                top: 12px; 
+                left: 12px;
+                bottom: 12px;
+                right: 12px;
+                border-radius: 50px;
+                border: 3px solid #9356dc;
+                border-top-color: #fff;
+                opacity:0.4;
+                -webkit-animation:spin 10s linear infinite;
+                animation:spin 10s linear infinite;
             }
         
             @-webkit-keyframes spin{
@@ -138,7 +156,7 @@ main {
             height: 60px;
             border-radius: 60px;
             border: 2px solid rgb(218, 214, 214);
-            background-color: #FF79DA;
+            background-image: linear-gradient(185deg, #ff708f 0, #ff6696 10%, #ff5b9e 20%, #ff50a5 30%, #ff46ad 40%, #f23cb5 50%, #e335bd 60%, #d232c6 70%, #be34cf 80%, #a739d9 90%, #8b40e2 100%);
             padding: 15px;
             span {
                 display: flex;
@@ -198,10 +216,22 @@ main {
                     padding: 0px 40px;
                     color: #9356dc;
                 }
+            }
+            .icon-purple {
+                display: flex;
+                flex-wrap: nowrap;
+                background-color: #e5d9f5;
+                box-shadow: 0.5em 0.5em 1em rgb(155 153 153 / 30%);
+                border-radius: 10px;
+                justify-content: center;
+                align-items: center;
+                padding: 15px 20px 15px 10px;
+                margin: 10px 10px 30px 30px;
 
-                p {
+                i {
+                    padding: 0px 40px;
+                    color: #9356dc;
                 }
-
             }
         }
 
@@ -221,7 +251,7 @@ main {
         .picture{
             display: block;
             height: 180px;
-            margin: 10px 20px;
+            margin: 25px 20px;
             background-color: #fff;
             position: relative;
             border-radius: 20px;
@@ -254,12 +284,8 @@ main {
                         font-weight: bold;
                     }
                 }
-                .coeur {
-                    position: absolute;
-                    bottom: 20px;
-                    right: 10px;
-                    color: initial;
-                }
+
+                
                 .nouveau {
                     position: absolute;
                     top: 15px;
@@ -269,6 +295,20 @@ main {
                     color: green;
                     background-color: $color-terciary;
                 }
+            }
+        }
+
+        .coeur {
+            position: absolute;
+            bottom: 20px;
+            right: 10px;
+
+            .fa-heart {
+                color: initial;
+
+                .fa-heart:active {
+                    background-image: linear-gradient(350deg, #ff788a 0, #ff6c92 10%, #ff609a 20%, #ff54a3 30%, #ff47ac 40%, #f23cb5 50%, #e034bf 60%, #cc32c9 70%, #b436d4 80%, #963dde 90%, #7145e8 100%);
+                }                         
             }
         }
     }
@@ -284,6 +324,7 @@ footer {
         font-family: shrikhand;
         font-size: 18px;
         color: #fff;
+        margin-bottom: 10px;
     }
    
     nav {
@@ -298,21 +339,12 @@ footer {
                 flex-direction: row;
                 align-items: center;
 
-                #proposition {            
-                    a {
-                    color:#fff;
-                    padding: 0px 10px;
-                    }
-                }
-                #partenariat {
-                    a {
-                    color:#fff;
-                    padding: 0px 10px;
-                    }
-                }
                 a {
                     color:#fff;
-                    padding: 0px 10px;
+
+                    i {
+                        margin-right: 10px;
+                    }
                 }
             }
         }

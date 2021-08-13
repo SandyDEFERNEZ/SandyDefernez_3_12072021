@@ -57,20 +57,38 @@ main section.chargement .loader {
 }
 main section.chargement .loader-circles {
   border-radius: 50%;
-  border: 6px solid #999;
+  border: 3px solid #999;
+  border-top-color: #fff;
+  -webkit-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
 }
 main section.chargement .loader-circles::after {
   content: "";
   position: absolute;
-  top: -6px;
-  left: -6px;
-  bottom: -6px;
-  right: -6px;
+  top: 5px;
+  left: 5px;
+  bottom: 5px;
+  right: 5px;
   border-radius: 50px;
-  border: 6px solid transparent;
+  border: 3px solid #FF79DA;
   border-top-color: #fff;
-  -webkit-animation: spin 1s linear infinite;
-  animation: spin 1s linear infinite;
+  opacity: 0.8;
+  -webkit-animation: spin 5s linear infinite;
+  animation: spin 5s linear infinite;
+}
+main section.chargement .loader-circles::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  bottom: 12px;
+  right: 12px;
+  border-radius: 50px;
+  border: 3px solid #9356dc;
+  border-top-color: #fff;
+  opacity: 0.4;
+  -webkit-animation: spin 10s linear infinite;
+  animation: spin 10s linear infinite;
 }
 @-webkit-keyframes spin {
   0% {
@@ -139,7 +157,7 @@ main .reservation button {
   height: 60px;
   border-radius: 60px;
   border: 2px solid #dad6d6;
-  background-color: #FF79DA;
+  background-image: linear-gradient(185deg, #ff708f 0, #ff6696 10%, #ff5b9e 20%, #ff50a5 30%, #ff46ad 40%, #f23cb5 50%, #e335bd 60%, #d232c6 70%, #be34cf 80%, #a739d9 90%, #8b40e2 100%);
   padding: 15px;
 }
 main .reservation button span {
@@ -194,6 +212,21 @@ main .fonction .choix .icon i {
   padding: 0px 40px;
   color: #9356dc;
 }
+main .fonction .choix .icon-purple {
+  display: flex;
+  flex-wrap: nowrap;
+  background-color: #e5d9f5;
+  box-shadow: 0.5em 0.5em 1em rgba(155, 153, 153, 0.3);
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 20px 15px 10px;
+  margin: 10px 10px 30px 30px;
+}
+main .fonction .choix .icon-purple i {
+  padding: 0px 40px;
+  color: #9356dc;
+}
 main .restaurant {
   display: block;
   justify-content: center;
@@ -207,7 +240,7 @@ main .restaurant h2 {
 main .restaurant .picture {
   display: block;
   height: 180px;
-  margin: 10px 20px;
+  margin: 25px 20px;
   background-color: #fff;
   position: relative;
   border-radius: 20px;
@@ -239,12 +272,6 @@ main .restaurant .picture .resto .texte {
 main .restaurant .picture .resto .texte .nom {
   font-weight: bold;
 }
-main .restaurant .picture .resto .coeur {
-  position: absolute;
-  bottom: 20px;
-  right: 10px;
-  color: initial;
-}
 main .restaurant .picture .resto .nouveau {
   position: absolute;
   top: 15px;
@@ -253,6 +280,17 @@ main .restaurant .picture .resto .nouveau {
   border: 1px solid #99E2D0;
   color: green;
   background-color: #99E2D0;
+}
+main .restaurant .coeur {
+  position: absolute;
+  bottom: 20px;
+  right: 10px;
+}
+main .restaurant .coeur .fa-heart {
+  color: initial;
+}
+main .restaurant .coeur .fa-heart .fa-heart:active {
+  background-image: linear-gradient(350deg, #ff788a 0, #ff6c92 10%, #ff609a 20%, #ff54a3 30%, #ff47ac 40%, #f23cb5 50%, #e034bf 60%, #cc32c9 70%, #b436d4 80%, #963dde 90%, #7145e8 100%);
 }
 
 footer {
@@ -264,6 +302,7 @@ footer h1 {
   font-family: shrikhand;
   font-size: 18px;
   color: #fff;
+  margin-bottom: 10px;
 }
 footer nav {
   display: block;
@@ -278,17 +317,11 @@ footer nav ul li {
   flex-direction: row;
   align-items: center;
 }
-footer nav ul li #proposition a {
-  color: #fff;
-  padding: 0px 10px;
-}
-footer nav ul li #partenariat a {
-  color: #fff;
-  padding: 0px 10px;
-}
 footer nav ul li a {
   color: #fff;
-  padding: 0px 10px;
+}
+footer nav ul li a i {
+  margin-right: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */
