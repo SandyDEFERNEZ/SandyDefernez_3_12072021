@@ -29,7 +29,7 @@ body h2 {
   font-size: 18px;
 }
 body h3 {
-  font-size: 18px;
+  font-size: 17px;
 }
 body p {
   color: #000;
@@ -58,6 +58,8 @@ header .header a p {
 
 section.container {
   display: block;
+  position: relative;
+  z-index: -1;
 }
 section.container .cadre {
   width: 100px;
@@ -79,8 +81,8 @@ main {
   border: 1px solid #eeeaea;
   border-top-left-radius: 25px;
   border-top-right-radius: 30px;
-  padding: 25px 5px 40px 30px;
-  margin-top: -90px;
+  padding: 25px 10px 40px 10 px;
+  margin-top: -50px;
 }
 main section.francaise {
   display: block;
@@ -101,30 +103,36 @@ main section.francaise .titre .coeur {
   color: #000;
 }
 main section.menu h2 {
-  text-decoration: underline #67da67;
+  text-decoration: underline #99E2D0;
   margin: 0px 10px 20px 0px;
 }
 main section.menu .plat {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
+  width: 100%;
+  height: 60px;
   color: #000;
-  border-radius: 25px;
+  border-radius: 15px;
   background-color: #fff;
-  padding: 20px;
-  margin: 0px 10px 20px 0px;
+  padding: 5px;
+  margin-bottom: 15px;
   position: relative;
+  overflow: hidden;
 }
 main section.menu .plat h3 {
   font-weight: bold;
-  padding-bottom: 10px;
+  padding-left: 5px;
 }
 main section.menu .plat .alignement {
   display: flex;
+  padding-left: 5px;
+  padding-bottom: 5px;
 }
 main section.menu .plat .alignement .ingredient {
   display: flex;
   flex-direction: row;
+  width: 95%;
 }
 main section.menu .plat .alignement .prix {
   display: flex;
@@ -139,12 +147,12 @@ main section.menu .plat .cercle {
   width: 70px;
   height: 90px;
   border: 1px solid #8df7ce;
-  border-top-right-radius: 25px;
-  border-bottom-right-radius: 25px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
   background-color: #8df7ce;
   position: absolute;
   top: 0px;
-  right: 0px;
+  right: -70px;
   bottom: 0px;
 }
 main section.menu .plat .cercle .fa {
@@ -159,18 +167,15 @@ main section.commande {
   display: block;
 }
 main section.commande button {
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: nowrap;
+  display: block;
   width: 70%;
   height: 60px;
   border-radius: 60px;
   border: 2px solid #dad6d6;
-  background-image: radial-gradient(circle at 53.14% 14.13%, #ff66f8 0, #ff54f7 25%, #f23cf2 50%, #ca26ed 75%, #a21fec 100%);
+  background: #99e2d0;
+  background: linear-gradient(90deg, #99e2d0 0%, #ff79da 0%, #9356dc 92%);
   box-shadow: 1px 1px 1px #b8b6b6;
-  margin: 0px 130px;
+  margin: auto;
 }
 main section.commande button span {
   display: flex;

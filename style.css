@@ -24,45 +24,35 @@ body p {
   font-size: 16px;
 }
 
-header .header {
-  display: block;
-}
-header .header a {
+section.chargement {
   display: flex;
   justify-content: center;
-  height: 25px;
-  margin: 10px 0px;
-}
-header .header a .img {
+  align-items: center;
   width: 100%;
   height: 100%;
-  object-fit: contain;
-}
-
-main {
-  display: block;
-}
-main section.chargement {
-  height: 150px;
-  line-height: 150px;
-  text-align: center;
   font-size: 30px;
+  background-color: #99E2D0;
+  position: fixed;
+  z-index: 60;
+  opacity: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
 }
-main section.chargement .loader {
-  width: 50px;
-  height: 50px;
-  display: inline-block;
-  vertical-align: middle;
-  position: relative;
+section.chargement .loader {
+  width: 80px;
+  height: 80px;
+  border-radius: 80%;
 }
-main section.chargement .loader-circles {
+section.chargement .loader-circles {
   border-radius: 50%;
-  border: 3px solid #999;
+  border: 3px solid #9356dc;
   border-top-color: #fff;
   -webkit-animation: spin 1s linear infinite;
   animation: spin 1s linear infinite;
 }
-main section.chargement .loader-circles::after {
+section.chargement .loader-circles::after {
   content: "";
   position: absolute;
   top: 5px;
@@ -76,7 +66,7 @@ main section.chargement .loader-circles::after {
   -webkit-animation: spin 5s linear infinite;
   animation: spin 5s linear infinite;
 }
-main section.chargement .loader-circles::before {
+section.chargement .loader-circles::before {
   content: "";
   position: absolute;
   top: 12px;
@@ -84,7 +74,7 @@ main section.chargement .loader-circles::before {
   bottom: 12px;
   right: 12px;
   border-radius: 50px;
-  border: 3px solid #9356dc;
+  border: 3px solid #000;
   border-top-color: #fff;
   opacity: 0.4;
   -webkit-animation: spin 10s linear infinite;
@@ -110,13 +100,33 @@ main section.chargement .loader-circles::before {
     transform: rotate(360deg);
   }
 }
-main form {
+
+header .header {
+  display: block;
+}
+header .header a {
+  display: flex;
+  justify-content: center;
+  height: 25px;
+  margin: 10px 0px;
+}
+header .header a .img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+main {
+  display: block;
+}
+
+form {
   display: block;
   border: 1px solid #ece9e9;
   background-color: #e6e0e0;
   padding: 10px;
 }
-main form .position {
+form .position {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-evenly;
@@ -124,7 +134,7 @@ main form .position {
   align-items: stretch;
   padding: 0px 30px;
 }
-main form .position input {
+form .position input {
   color: black;
   display: flex;
   align-content: space-between;
@@ -132,7 +142,8 @@ main form .position input {
   font-weight: bold;
   border: initial;
 }
-main .reservation {
+
+section.reservation {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -142,44 +153,53 @@ main .reservation {
   padding: 25px;
   background-color: #eeecec;
 }
-main .reservation h1 {
+section.reservation h1 {
   text-align: center;
   font-weight: bold;
 }
-main .reservation p {
+section.reservation p {
   text-align: center;
   font-size: 14px;
   padding: 10px;
 }
-main .reservation button {
+section.reservation button {
   display: inline-block;
   width: 70%;
   height: 60px;
   border-radius: 60px;
   border: 2px solid #dad6d6;
-  background-image: linear-gradient(185deg, #ff708f 0, #ff6696 10%, #ff5b9e 20%, #ff50a5 30%, #ff46ad 40%, #f23cb5 50%, #e335bd 60%, #d232c6 70%, #be34cf 80%, #a739d9 90%, #8b40e2 100%);
+  background: linear-gradient(90deg, #99e2d0 0%, #ff79da 0%, #9356dc 92%);
   padding: 15px;
 }
-main .reservation button span {
+section.reservation button:hover {
+  cursor: pointer;
+  background-color: black;
+}
+section.reservation button span {
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 14px;
   color: #fff;
 }
-main .fonction {
+
+.fonction {
   display: block;
   margin: 0px 0px 40px 0px;
 }
-main .fonction h2 {
+.fonction h2 {
   margin: 10px;
   padding: 20px 15px;
 }
-main .fonction .choix {
+.fonction .choix {
   display: block;
   position: relative;
 }
-main .fonction .choix .pastille {
+.fonction .choix:hover {
+  cursor: pointer;
+  background-color: #e4d5f6;
+}
+.fonction .choix .pastille {
   display: flex;
   justify-content: center;
   border: 1px solid black;
@@ -191,13 +211,13 @@ main .fonction .choix .pastille {
   top: 15px;
   left: 20px;
 }
-main .fonction .choix .pastille p {
+.fonction .choix .pastille p {
   width: 100%;
   display: flex;
   justify-content: center;
   color: #fff;
 }
-main .fonction .choix .icon {
+.fonction .choix .icon {
   display: flex;
   flex-wrap: nowrap;
   background-color: #eeecec;
@@ -208,36 +228,22 @@ main .fonction .choix .icon {
   padding: 15px 20px 15px 10px;
   margin: 10px 10px 30px 30px;
 }
-main .fonction .choix .icon i {
+.fonction .choix .icon i {
   padding: 0px 40px;
   color: #9356dc;
 }
-main .fonction .choix .icon-purple {
-  display: flex;
-  flex-wrap: nowrap;
-  background-color: #e5d9f5;
-  box-shadow: 0.5em 0.5em 1em rgba(155, 153, 153, 0.3);
-  border-radius: 10px;
-  justify-content: center;
-  align-items: center;
-  padding: 15px 20px 15px 10px;
-  margin: 10px 10px 30px 30px;
-}
-main .fonction .choix .icon-purple i {
-  padding: 0px 40px;
-  color: #9356dc;
-}
-main .restaurant {
+
+.restaurant {
   display: block;
   justify-content: center;
   background-color: #eeecec;
   border: 1px solid #eeecec;
   padding: 20px 0px 30px 10px;
 }
-main .restaurant h2 {
+.restaurant h2 {
   margin: 20px;
 }
-main .restaurant .picture {
+.restaurant .picture {
   display: block;
   height: 180px;
   margin: 25px 20px;
@@ -247,10 +253,17 @@ main .restaurant .picture {
   box-shadow: 0.5em 0.5em 1em rgba(155, 153, 153, 0.3);
   overflow: hidden;
 }
-main .restaurant .picture .resto {
+.restaurant .picture:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.restaurant .picture .resto {
   display: block;
 }
-main .restaurant .picture .resto .cadre {
+.restaurant .picture .resto .cadre {
   display: flex;
   width: 100%;
   height: 130px;
@@ -258,21 +271,21 @@ main .restaurant .picture .resto .cadre {
   border-top-left-radius: 20px;
   overflow: hidden;
 }
-main .restaurant .picture .resto .cadre img {
+.restaurant .picture .resto .cadre img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-main .restaurant .picture .resto .texte {
+.restaurant .picture .resto .texte {
   display: flex;
   flex-direction: column;
   padding: 10px;
   color: initial;
 }
-main .restaurant .picture .resto .texte .nom {
+.restaurant .picture .resto .texte .nom {
   font-weight: bold;
 }
-main .restaurant .picture .resto .nouveau {
+.restaurant .picture .resto .nouveau {
   position: absolute;
   top: 15px;
   right: 15px;
@@ -281,15 +294,15 @@ main .restaurant .picture .resto .nouveau {
   color: green;
   background-color: #99E2D0;
 }
-main .restaurant .coeur {
+.restaurant .coeur {
   position: absolute;
   bottom: 20px;
   right: 10px;
 }
-main .restaurant .coeur .fa-heart {
+.restaurant .coeur .fa-heart {
   color: initial;
 }
-main .restaurant .coeur .fa-heart .fa-heart:active {
+.restaurant .coeur .fa-heart:hover {
   background-image: linear-gradient(350deg, #ff788a 0, #ff6c92 10%, #ff609a 20%, #ff54a3 30%, #ff47ac 40%, #f23cb5 50%, #e034bf 60%, #cc32c9 70%, #b436d4 80%, #963dde 90%, #7145e8 100%);
 }
 
@@ -316,12 +329,16 @@ footer nav ul li {
   flex-wrap: nowrap;
   flex-direction: row;
   align-items: center;
+  cursor: pointer;
 }
 footer nav ul li a {
   color: #fff;
+}
+footer nav ul li a:hover {
+  border-bottom-color: #fff;
 }
 footer nav ul li a i {
   margin-right: 10px;
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=Style.css.map */
