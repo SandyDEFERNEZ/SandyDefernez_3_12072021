@@ -1,0 +1,25 @@
+@mixin d-flex {
+    display: flex;
+    flex-wrap: wrap;   
+}
+
+@mixin gradient-color {
+    background: linear-gradient(90deg, $color-secondary 0%, $color-primary 100%);
+}
+
+@mixin lighten-color {
+    background: linear-gradient(90deg, lighten( $color-secondary, 10%) 0%, lighten( $color-primary, 10%) 100%);
+}
+
+@mixin img-contain {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+@mixin img-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+

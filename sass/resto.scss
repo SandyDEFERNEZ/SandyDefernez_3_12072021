@@ -2,22 +2,14 @@
 @import "libs/reset.scss";
 @import "libs/mixins.scss";
 
-* {   
-    margin: 0px;
-    padding: 0px;
-    list-style: none;
-    text-decoration: none;
-    box-sizing: border-box;
-    font-family: "Roboto";
-}
 
 body {
     display: block;
     h1, h2, h3{
-        color: #000;
+        color: $black;
     }
     h1 {
-        font-size: 20px;
+        font-size: 30px;
     }
     h2 {
         font-size: 18px;
@@ -26,7 +18,7 @@ body {
         font-size: 17px;
     }
     p {
-        color: #000;
+        color: $black;
     }
 }
 
@@ -34,20 +26,22 @@ header {
     .header {
         display: block;       
         a {
-            width: 60%;
-            display: flex;
-            flex-wrap: nowrap;
+            @include d-flex;
+            width: 100%;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
             padding: 0px 30px 10px 30px;
             i{
-                color: #000;
+                color: $black;
                 padding: 0px 20px;
+                font-size: 18px;
             }
-            p {
-                font-family: Shrikhand;
+            span {
+                font-family: "Shrikhand";
                 display: flex;
                 align-items: center;
+                font-size: 30px;
+                color: $black;
             }
         }
     }
@@ -64,9 +58,7 @@ section.container {
         .image {
             display: block;
             img {
-                width: 100%;
-                height: 100%;
-                object-fit: contain;
+                @include img-contain;
             }
         }
     }
@@ -75,166 +67,479 @@ section.container {
 main {
     width: 100%;
     display: block;
-    background-color: rgb(238, 234, 234);
-    border: 1px solid rgb(238, 234, 234);
+    background-color: $clair;
+    border: 1px solid $clair;
     border-top-left-radius: 25px;
     border-top-right-radius: 30px;
-    padding: 25px 10px 40px 10
-    px;
-    margin-top: -50px;
+    padding: 25px 10px 40px 10px;
+    margin-top: -120px;
     
-    section.francaise {
+    section.restaurant {
         display: block;
-        margin: 0px 10px 20px 0px;
+        margin-bottom: 20px;
         border-top-left-radius: 25px;
         border-top-right-radius: 25px;
+        position: relative;
 
         .titre {
             display: flex;
-            flex-wrap: nowrap;
             justify-content: space-between;
+            align-items: center;
                 
             h1 {
-                font-family: Shrikhand;
+                font-family: "Shrikhand";
                 font-weight: bold;
             }
+
             .coeur {
-                color: #000;
+                display: inline-block;
+                cursor: pointer;
+                &:hover {
+                    .coeur-vide {
+                        opacity: 0;
+                    }
+                }
+    
+                .coeur-vide i {  
+                    color: initial;
+                    overflow: hidden;
+                    padding-right: 15px;
+                    &:hover {
+                        color: transparent;
+                    }
+                }
+
+                .coeur-plein i {
+                    color: transparent;
+                    overflow: hidden;
+                    position: absolute;
+                    right: 15px;
+                    
+                    &:hover {    
+                        background-image: linear-gradient(to bottom, $color-terciary 5%, $color-secondary 15%, $color-primary 80%);
+                        background-clip: text;
+                        -webkit-background-clip: text;
+                        color: transparent;
+                        transition: all 1s;
+                    }    
+                }
             }
         }
     }
 
-    section.menu {
-        h2{
-            text-decoration: underline #99E2D0;
-            margin: 0px 10px 20px 0px;
+    h2{
+        position: relative;
+        display: block;
+        text-transform: uppercase;
+        margin: 15px 10px 30px 0px;
+
+        &::after { 
+            display: block;
+            content: "";
+            width: 45px;
+            height: 5px;
+            background-color: $color-terciary;
+            position: absolute;
+            left: 0px;
+            bottom: -15px;
         }
+    }
+
+    section.menu {
+        overflow: hidden;
+        position: relative;
 
         .plat {
-            display: flex;
-            flex-wrap: nowrap;
-            flex-direction: column;
-            width: 100%;
             height: 60px;
-            color: #000;
+            color: $black;
             border-radius: 15px;
-            background-color: #fff;
+            background-color: $white;
             padding: 5px;
             margin-bottom: 15px;
             position: relative;
             overflow: hidden;
-            
-            h3 {
-                font-weight: bold;
-                padding-left: 5px;
-            }
+
+            -webkit-animation: opacity 1s ease-in-out .5s;
+            animation: opacity 1s ease-in-out .5s;
 
             .alignement {
                 display: flex;
                 padding-left: 5px;
                 padding-bottom: 5px;
+               
+                &:hover {
+                    cursor: pointer;
+                    overflow: hidden;
+                    
+                    -webkit-animation: slide .5s linear;
+                    animation: slide .5s linear;
+                    
+                    .icon {
+                        display: flex;
+                        position: absolute;
+                        top: 0px;
+                        right: 0px;
+                        bottom: 0px;
+                    
+                        i {
+                            -webkit-animation: slide linear;
+                            animation: slide linear;
+                            -webkit-animation: rotate .5s linear;
+                            animation: rotate .5s linear;
+                        }
+                    }
+                    .ingredient {
+                        width: 70%;
+                    }
+                }
 
                 .ingredient {
+                    width: 100%;
                     display: flex;
-                    flex-direction: row;
-                    width: 95%;
+                    flex-direction: column;
+                    overflow: hidden;
+                    white-space: nowrap; 
+                    text-overflow: ellipsis;
+                    
+                    h3 {
+                        font-weight: bold;
+                        overflow: hidden;
+                        white-space: nowrap; 
+                        text-overflow: ellipsis;
+                    }
+                    p {
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                    }
                 }
                 
                 .prix {
                     display: flex;
-                    padding-right: 40px;
-                    align-self: flex-end;
-                }
-            }
+                    align-items: flex-end;
+                    font-weight: bold;
+                }    
 
-            .cercle {
+            .icon {
                 display: flex;
                 flex-direction: row;
                 align-items: center;
                 justify-content: center;
-                width: 70px;
-                height: 90px;
+                width: 50px;
                 border: 1px solid rgb(141, 247, 206);
                 border-top-right-radius: 15px;
                 border-bottom-right-radius: 15px;
                 background-color: rgb(141, 247, 206);
                 position: absolute;
                 top: 0px;
-                right: -70px;
+                right: -50px;
                 bottom: 0px;
 
-                .fa {
-                    color: transparent;
-
-                    .fa-check-circle {
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-          
-                    }
+                .fas {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 30px;
+                    border: 1px solid transparent;
+                    background-color: #fff;
+                    color: rgb(141, 247, 206);
                 }
             }
+        
+        
+        @-webkit-keyframes opacity {
+            0% {
+                opacity: .2;
+                -webkit-transition: opacity .5s linear .5ms;
+                transition: opacity .5s linear .5ms;
+            }
+            50% {
+                opacity: .5;
+                -webkit-transition: opacity .8s linear .8ms;
+                transition: opacity .8s linear .8ms;
+            }
+            100% {
+                opacity: .8;
+                -webkit-transition: opacity 1s linear 1s;
+                transition: opacity 1s linear 1s;
+            }
+        }
+        @keyframes opacity {
+            0% {
+                opacity: .2;
+                -webkit-transition: opacity .5s linear .5ms;
+                transition: opacity .5s linear .5ms;
+            }
+            50% {
+                opacity: .5;
+                -webkit-transition: opacity .8s linear .8ms;
+                transition: opacity .8s linear .8ms;
+            }
+            100% {
+                opacity: .8;
+                -webkit-transition: opacity 1s linear 1s;
+                transition: opacity 1s linear 1s;
+            }
+        }
+
+        @-webkit-keyframes slide {
+            0% {
+                -webkit-transform: slide(0);
+                transform: slide(0);
+                scroll-margin-right: 0px;
+                -webkit-transition: .2s ease-in-out;
+                transition: .2s ease-in-out;
+            }
+            50% {
+                -webkit-transform: slide(1);
+                transform: slide(1);
+                scroll-margin-right: 10px;
+                -webkit-transition: .2s ease-in-out;
+                transition: .2s ease-in-out;
+            }
+            100% {
+                -webkit-transform: slide(1.25);
+                transform: slide(1.25);
+                scroll-margin-right: 20px;
+                -webkit-transition: .3s ease-in-out;
+                transition: .3s ease-in-out;           
+            }
+        }
+        @keyframes slide {
+            0% {
+                -webkit-transform: slide(0);
+                transform: slide(0);
+                
+                -webkit-transition: .2s ease-in-out;
+                transition: .2s ease-in-out;
+            }
+            50% {
+                -webkit-transform: slide(1);
+                transform: slide(1);
+    
+                -webkit-transition: .2s ease-in-out;
+                transition: .2s ease-in-out;
+            }
+            100% {
+                -webkit-transform: slide(1.25);
+                transform: slide(1.25);
+                -webkit-transition: .3s ease-in-out;
+                transition: .3s ease-in-out;           
+            }
+        }
+
+        @-webkit-keyframes rotate {
+            0% {
+                -webkit-transform: rotate(0deg);
+                transform: rotate (0deg);
+                -webkit-transition: .5s ease-in-out;
+                transition: .5s ease-in-out;
+            }
+            50% {
+                -webkit-transform: rotate(180deg);
+                transform: rotate (180deg);
+                -webkit-transition: .5s ease-in-out;
+                transition: .5s ease-in-out;
+            }
+            100% {
+                -webkit-transform: rotate(360deg) ;
+                transform: rotate(360deg);
+                -webkit-transition: .5s ease-in-out;
+                transition: .5s ease-in-out;           
+            }
+        }
+        @keyframes rotate {
+            0% {
+                -webkit-transform: rotate(0deg);
+                transform: rotate (0deg);
+                -webkit-transition: .5s ease-in-out;
+                transition: .5s ease-in-out;
+            }
+            50% {
+                -webkit-transform: rotate(180deg);
+                transform: rotate (180deg);
+                -webkit-transition: .5s ease-in-out;
+                transition: .5s ease-in-out;
+            }
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+                -webkit-transition: .5s ease-in-out;
+                transition: .5s ease-in-out;           
+            }
+        }
         }
     }
-
-    section.commande {
+    }
+    
+    .commande {
         display: block;
 
-        button{
+        button {
             display: block;
-            width: 70%;
+            width: 60%;
             height: 60px;
             border-radius: 60px;
             border: 2px solid #dad6d6;
-            background: rgb(153,226,208);
             background: linear-gradient(90deg, rgba(153,226,208,1) 0%, rgba(255,121,218,1) 0%, rgba(147,86,220,1) 92%);
             box-shadow: 1px 1px 1px rgb(184, 182, 182);
             margin: auto;
 
-            span {
+            &:hover {
+                cursor: pointer;
+                background: linear-gradient(90deg, lighten(rgba(255,121,218,1), 10%) 0%, lighten(rgba(147,86,220,1), 10%) 100%);
+                box-shadow: 0.3em 0.3em 0.5em rgb(129, 127, 127);
+            }
+            a {
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 font-size: 14px;
-                color: #fff;           
+                color: $white;                         
             }
         }
     }
 }
 
 footer {
-    background-color: #000;
-    color:#fff;
+    background-color: $black;
+    color: $white;
     padding: 25px 25px 35px 25px;
 
     h1 {
         font-family: shrikhand;
         font-size: 18px;
-        color: #fff;
+        color: $white;
         margin-bottom: 10px;
     }
-       
+    
     nav {
         display: block;
         ul {
             display: flex;                    
-            flex-direction: column; 
-                
+            flex-direction: column;  
             li {
                 display: flex;
                 flex-wrap: nowrap;
                 flex-direction: row;
                 align-items: center;
-                    
+                cursor: pointer;
+
                 a {
-                    color:#fff;
+                    color: $white;
+                    &:hover {
+                        border-bottom: 1px solid $white;
+                    }
 
                     i {
                         margin-right: 10px;
                     }
-
                 }
             }
         }
     }
-} 
+}
+
+@media only screen and (min-width: 380px){
+    main {
+        .menu {
+            .plat {
+                .alignement {
+                    display: flex;
+
+                    &:hover {
+                        .ingredient {
+                            width: 78%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@media only screen and (min-width: 480px){
+    .menu {
+        .plat {
+            .alignement {
+                &:hover {
+                    .ingredient {
+                        width: 82%;
+                    }
+                }
+            }
+        }
+    }
+    section.commande {    
+        button {
+            width: 30%;
+        }
+    }
+}
+
+@media only screen and (min-width: 800px){
+    .menu {
+        margin-bottom: 20px;
+        .entree {
+            display: flex;
+            .plat {
+                width: 100%;
+                margin: 0px 5px;
+            }
+        }
+
+        .plats {
+            display: flex;
+            .plat {
+                width: 100%;
+                margin: 0px 5px;
+            }
+        }
+
+        .desserts {
+            display: flex;
+            .plat {
+                width: 100%;
+                margin: 0px 5px;
+            }
+        }
+    }
+
+    footer {
+        nav {
+            ul {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                align-content: space-around;
+                justify-content: space-between;
+                align-items: center;
+                padding-right: 100px;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1050px){
+    .menu {
+        .plat {
+            .alignement {
+                &:hover {
+                    .ingredient {
+                        width: 88%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1200px){
+    body {
+        max-width: 1600px;
+        margin: auto;
+    }
+}

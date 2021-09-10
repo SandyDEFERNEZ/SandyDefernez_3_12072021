@@ -7,15 +7,6 @@
   font-family: "Roboto";
 }
 
-* {
-  margin: 0px;
-  padding: 0px;
-  list-style: none;
-  text-decoration: none;
-  box-sizing: border-box;
-  font-family: "Roboto";
-}
-
 body h1, body h2, body h3 {
   color: #000;
 }
@@ -28,17 +19,19 @@ section.chargement {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   font-size: 30px;
   background-color: #99E2D0;
   position: fixed;
-  z-index: 60;
   opacity: 0;
+  z-index: -30;
   top: 0;
   bottom: 0;
   right: 0;
   left: 0;
+  -webkit-animation: loader 3s;
+  animation: loader 3s;
 }
 section.chargement .loader {
   width: 80px;
@@ -52,7 +45,7 @@ section.chargement .loader-circles {
   -webkit-animation: spin 1s linear infinite;
   animation: spin 1s linear infinite;
 }
-section.chargement .loader-circles::after {
+section.chargement .loader-circles:after {
   content: "";
   position: absolute;
   top: 5px;
@@ -63,10 +56,10 @@ section.chargement .loader-circles::after {
   border: 3px solid #FF79DA;
   border-top-color: #fff;
   opacity: 0.8;
-  -webkit-animation: spin 5s linear infinite;
-  animation: spin 5s linear infinite;
+  -webkit-animation: spin 3s linear infinite;
+  animation: spin 3s linear infinite;
 }
-section.chargement .loader-circles::before {
+section.chargement .loader-circles:before {
   content: "";
   position: absolute;
   top: 12px;
@@ -77,8 +70,8 @@ section.chargement .loader-circles::before {
   border: 3px solid #000;
   border-top-color: #fff;
   opacity: 0.4;
-  -webkit-animation: spin 10s linear infinite;
-  animation: spin 10s linear infinite;
+  -webkit-animation: spin 5s linear infinite;
+  animation: spin 5s linear infinite;
 }
 @-webkit-keyframes spin {
   0% {
@@ -98,6 +91,26 @@ section.chargement .loader-circles::before {
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes loader {
+  0% {
+    opacity: 0.8;
+    z-index: 60;
+  }
+  100% {
+    opacity: 0;
+    z-index: -30;
+  }
+}
+@keyframes loader {
+  0% {
+    opacity: 0.8;
+    z-index: 60;
+  }
+  100% {
+    opacity: 0;
+    z-index: -30;
   }
 }
 
@@ -128,15 +141,20 @@ form {
 }
 form .position {
   display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-evenly;
-  align-content: space-around;
-  align-items: stretch;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
   padding: 0px 30px;
 }
+form .position label {
+  margin-right: 20px;
+  padding-left: 20px;
+}
 form .position input {
-  color: black;
   display: flex;
+  flex-wrap: wrap;
+  color: #000;
   align-content: space-between;
   background-color: #e6e0e0;
   font-weight: bold;
@@ -150,7 +168,7 @@ section.reservation {
   justify-content: center;
   align-items: center;
   align-content: center;
-  padding: 25px;
+  padding: 25px 25px 60px 25px;
   background-color: #eeecec;
 }
 section.reservation h1 {
@@ -163,17 +181,23 @@ section.reservation p {
   padding: 10px;
 }
 section.reservation button {
-  display: inline-block;
-  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  width: 80%;
   height: 60px;
   border-radius: 60px;
-  border: 2px solid #dad6d6;
-  background: linear-gradient(90deg, #99e2d0 0%, #ff79da 0%, #9356dc 92%);
+  border: none;
+  background: linear-gradient(90deg, #FF79DA 0%, #9356dc 100%);
+  box-shadow: 0.2em 0.2em 0.5em #c4c0c0;
   padding: 15px;
 }
 section.reservation button:hover {
   cursor: pointer;
-  background-color: black;
+  background: linear-gradient(90deg, #fface8 0%, #ae80e5 100%);
+  box-shadow: 0.3em 0.3em 0.5em #817f7f;
 }
 section.reservation button span {
   display: flex;
@@ -183,54 +207,60 @@ section.reservation button span {
   color: #fff;
 }
 
-.fonction {
+.fonctionnement {
   display: block;
   margin: 0px 0px 40px 0px;
 }
-.fonction h2 {
+.fonctionnement h2 {
   margin: 10px;
-  padding: 20px 15px;
+  padding: 20px 10px;
 }
-.fonction .choix {
+.fonctionnement .choix .choisir {
+  width: 100%;
   display: block;
   position: relative;
 }
-.fonction .choix:hover {
-  cursor: pointer;
-  background-color: #e4d5f6;
-}
-.fonction .choix .pastille {
+.fonctionnement .choix .choisir .pastille {
   display: flex;
   justify-content: center;
-  border: 1px solid black;
   background-color: #9356dc;
   width: 20px;
   height: 20px;
   border-radius: 20px;
   position: absolute;
-  top: 15px;
-  left: 20px;
+  top: 32%;
+  left: 5px;
 }
-.fonction .choix .pastille p {
+.fonctionnement .choix .choisir .pastille p {
   width: 100%;
   display: flex;
   justify-content: center;
   color: #fff;
 }
-.fonction .choix .icon {
+.fonctionnement .choix .choisir .icon {
   display: flex;
   flex-wrap: nowrap;
   background-color: #eeecec;
-  box-shadow: 0.5em 0.5em 1em rgba(155, 153, 153, 0.3);
+  box-shadow: 0.2em 0.2em 0.5em #c4c0c0;
   border-radius: 10px;
-  justify-content: center;
   align-items: center;
   padding: 15px 20px 15px 10px;
-  margin: 10px 10px 30px 30px;
+  margin: 10px 20px 20px 15px;
 }
-.fonction .choix .icon i {
-  padding: 0px 40px;
+.fonctionnement .choix .choisir .icon:hover {
+  cursor: pointer;
+  background: #e4d5f6;
+  box-shadow: 0.3em 0.3em 0.5em #817f7f;
+}
+.fonctionnement .choix .choisir .icon:hover i {
   color: #9356dc;
+}
+.fonctionnement .choix .choisir .icon i {
+  padding: 0px 15px;
+  color: #000;
+}
+.fonctionnement .choix .choisir .icon p {
+  font-weight: bold;
 }
 
 .restaurant {
@@ -241,51 +271,49 @@ section.reservation button span {
   padding: 20px 0px 30px 10px;
 }
 .restaurant h2 {
-  margin: 20px;
+  margin: 20px 10px;
 }
-.restaurant .picture {
+.restaurant .image .picture {
   display: block;
-  height: 180px;
-  margin: 25px 20px;
+  height: 260px;
+  margin: 25px 15px 25px 10px;
   background-color: #fff;
   position: relative;
   border-radius: 20px;
   box-shadow: 0.5em 0.5em 1em rgba(155, 153, 153, 0.3);
   overflow: hidden;
 }
-.restaurant .picture:hover {
+.restaurant .image .picture:hover {
   cursor: pointer;
-  -webkit-transform: scale(1);
-  transform: scale(1);
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
+  -webkit-animation: scale 0.3s linear;
+  animation: scale 0.3s linear;
 }
-.restaurant .picture .resto {
+.restaurant .image .picture .resto {
   display: block;
 }
-.restaurant .picture .resto .cadre {
+.restaurant .image .picture .resto .cadre {
   display: flex;
   width: 100%;
-  height: 130px;
+  height: 200px;
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
   overflow: hidden;
 }
-.restaurant .picture .resto .cadre img {
+.restaurant .image .picture .resto .cadre img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.restaurant .picture .resto .texte {
+.restaurant .image .picture .resto .texte {
   display: flex;
   flex-direction: column;
   padding: 10px;
   color: initial;
 }
-.restaurant .picture .resto .texte .nom {
+.restaurant .image .picture .resto .texte .nom {
   font-weight: bold;
 }
-.restaurant .picture .resto .nouveau {
+.restaurant .image .picture .resto .nouveau {
   position: absolute;
   top: 15px;
   right: 15px;
@@ -294,16 +322,62 @@ section.reservation button span {
   color: green;
   background-color: #99E2D0;
 }
-.restaurant .coeur {
+@-webkit-keyframes scale {
+  from {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    -webkit-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+  }
+}
+@keyframes scale {
+  from {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    -webkit-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+  }
+}
+.restaurant .image .picture .coeur {
+  display: block;
   position: absolute;
   bottom: 20px;
   right: 10px;
 }
-.restaurant .coeur .fa-heart {
+.restaurant .image .picture .coeur:hover .coeur-vide {
+  opacity: 0;
+}
+.restaurant .image .picture .coeur:hover .coeur-plein i {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  overflow: hidden;
+  background-image: linear-gradient(to bottom, #99E2D0 5%, #FF79DA 15%, #9356dc 80%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: all 1s;
+}
+.restaurant .image .picture .coeur-vide {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
   color: initial;
 }
-.restaurant .coeur .fa-heart:hover {
-  background-image: linear-gradient(350deg, #ff788a 0, #ff6c92 10%, #ff609a 20%, #ff54a3 30%, #ff47ac 40%, #f23cb5 50%, #e034bf 60%, #cc32c9 70%, #b436d4 80%, #963dde 90%, #7145e8 100%);
+.restaurant .image .picture .coeur-plein i {
+  color: transparent;
 }
 
 footer {
@@ -327,7 +401,6 @@ footer nav ul {
 footer nav ul li {
   display: flex;
   flex-wrap: nowrap;
-  flex-direction: row;
   align-items: center;
   cursor: pointer;
 }
@@ -335,10 +408,84 @@ footer nav ul li a {
   color: #fff;
 }
 footer nav ul li a:hover {
-  border-bottom-color: #fff;
+  border-bottom: 1px solid #fff;
 }
 footer nav ul li a i {
   margin-right: 10px;
+}
+
+@media only screen and (min-width: 480px) {
+  section.reservation button {
+    width: 45%;
+  }
+
+  section.fonctionnement .choix {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: space-around;
+  }
+  section.fonctionnement .choix .choisir {
+    width: 70%;
+  }
+}
+@media only screen and (min-width: 720px) {
+  section.fonctionnement .choix {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+  }
+
+  section.restaurant .image {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0px 20px;
+  }
+  section.restaurant .image .picture {
+    width: 45%;
+    margin: 25px -3px 25px -10px;
+    overflow: hidden;
+  }
+}
+@media only screen and (min-width: 800px) {
+  footer nav ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: space-around;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 100px;
+  }
+}
+@media only screen and (min-width: 960px) {
+  .fonctionnement .choix .choisir .pastille {
+    position: absolute;
+    top: 29%;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  section.restaurant .image {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0px 20px;
+  }
+  section.restaurant .image .picture {
+    width: 24%;
+    margin: 25px 0px 25px -10px;
+    overflow: hidden;
+  }
+
+  body {
+    max-width: 1600px;
+    margin: auto;
+  }
 }
 
 /*# sourceMappingURL=Style.css.map */

@@ -7,15 +7,6 @@
   font-family: "Roboto";
 }
 
-* {
-  margin: 0px;
-  padding: 0px;
-  list-style: none;
-  text-decoration: none;
-  box-sizing: border-box;
-  font-family: "Roboto";
-}
-
 body {
   display: block;
 }
@@ -23,7 +14,7 @@ body h1, body h2, body h3 {
   color: #000;
 }
 body h1 {
-  font-size: 20px;
+  font-size: 30px;
 }
 body h2 {
   font-size: 18px;
@@ -39,21 +30,24 @@ header .header {
   display: block;
 }
 header .header a {
-  width: 60%;
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
+  width: 100%;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 0px 30px 10px 30px;
 }
 header .header a i {
   color: #000;
   padding: 0px 20px;
+  font-size: 18px;
 }
-header .header a p {
-  font-family: Shrikhand;
+header .header a span {
+  font-family: "Shrikhand";
   display: flex;
   align-items: center;
+  font-size: 30px;
+  color: #000;
 }
 
 section.container {
@@ -77,40 +71,78 @@ section.container .cadre .image img {
 main {
   width: 100%;
   display: block;
-  background-color: #eeeaea;
-  border: 1px solid #eeeaea;
+  background-color: #eeecec;
+  border: 1px solid #eeecec;
   border-top-left-radius: 25px;
   border-top-right-radius: 30px;
-  padding: 25px 10px 40px 10 px;
-  margin-top: -50px;
+  padding: 25px 10px 40px 10px;
+  margin-top: -120px;
 }
-main section.francaise {
+main section.restaurant {
   display: block;
-  margin: 0px 10px 20px 0px;
+  margin-bottom: 20px;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
+  position: relative;
 }
-main section.francaise .titre {
+main section.restaurant .titre {
   display: flex;
-  flex-wrap: nowrap;
   justify-content: space-between;
+  align-items: center;
 }
-main section.francaise .titre h1 {
-  font-family: Shrikhand;
+main section.restaurant .titre h1 {
+  font-family: "Shrikhand";
   font-weight: bold;
 }
-main section.francaise .titre .coeur {
-  color: #000;
+main section.restaurant .titre .coeur {
+  display: inline-block;
+  cursor: pointer;
 }
-main section.menu h2 {
-  text-decoration: underline #99E2D0;
-  margin: 0px 10px 20px 0px;
+main section.restaurant .titre .coeur:hover .coeur-vide {
+  opacity: 0;
+}
+main section.restaurant .titre .coeur .coeur-vide i {
+  color: initial;
+  overflow: hidden;
+  padding-right: 15px;
+}
+main section.restaurant .titre .coeur .coeur-vide i:hover {
+  color: transparent;
+}
+main section.restaurant .titre .coeur .coeur-plein i {
+  color: transparent;
+  overflow: hidden;
+  position: absolute;
+  right: 15px;
+}
+main section.restaurant .titre .coeur .coeur-plein i:hover {
+  background-image: linear-gradient(to bottom, #99E2D0 5%, #FF79DA 15%, #9356dc 80%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: all 1s;
+}
+main h2 {
+  position: relative;
+  display: block;
+  text-transform: uppercase;
+  margin: 15px 10px 30px 0px;
+}
+main h2::after {
+  display: block;
+  content: "";
+  width: 45px;
+  height: 5px;
+  background-color: #99E2D0;
+  position: absolute;
+  left: 0px;
+  bottom: -15px;
+}
+main section.menu {
+  overflow: hidden;
+  position: relative;
 }
 main section.menu .plat {
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: column;
-  width: 100%;
   height: 60px;
   color: #000;
   border-radius: 15px;
@@ -119,65 +151,222 @@ main section.menu .plat {
   margin-bottom: 15px;
   position: relative;
   overflow: hidden;
-}
-main section.menu .plat h3 {
-  font-weight: bold;
-  padding-left: 5px;
+  -webkit-animation: opacity 1s ease-in-out 0.5s;
+  animation: opacity 1s ease-in-out 0.5s;
 }
 main section.menu .plat .alignement {
   display: flex;
   padding-left: 5px;
   padding-bottom: 5px;
 }
-main section.menu .plat .alignement .ingredient {
+main section.menu .plat .alignement:hover {
+  cursor: pointer;
+  overflow: hidden;
+  -webkit-animation: slide 0.5s linear;
+  animation: slide 0.5s linear;
+}
+main section.menu .plat .alignement:hover .icon {
   display: flex;
-  flex-direction: row;
-  width: 95%;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+main section.menu .plat .alignement:hover .icon i {
+  -webkit-animation: slide linear;
+  animation: slide linear;
+  -webkit-animation: rotate 0.5s linear;
+  animation: rotate 0.5s linear;
+}
+main section.menu .plat .alignement:hover .ingredient {
+  width: 70%;
+}
+main section.menu .plat .alignement .ingredient {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+main section.menu .plat .alignement .ingredient h3 {
+  font-weight: bold;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+main section.menu .plat .alignement .ingredient p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 main section.menu .plat .alignement .prix {
   display: flex;
-  padding-right: 40px;
-  align-self: flex-end;
+  align-items: flex-end;
+  font-weight: bold;
 }
-main section.menu .plat .cercle {
+main section.menu .plat .alignement .icon {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  width: 70px;
-  height: 90px;
+  width: 50px;
   border: 1px solid #8df7ce;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   background-color: #8df7ce;
   position: absolute;
   top: 0px;
-  right: -70px;
+  right: -50px;
   bottom: 0px;
 }
-main section.menu .plat .cercle .fa {
-  color: transparent;
-}
-main section.menu .plat .cercle .fa .fa-check-circle {
+main section.menu .plat .alignement .icon .fas {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  border: 1px solid transparent;
+  background-color: #fff;
+  color: #8df7ce;
 }
-main section.commande {
+@-webkit-keyframes opacity {
+  0% {
+    opacity: 0.2;
+    -webkit-transition: opacity 0.5s linear 0.5ms;
+    transition: opacity 0.5s linear 0.5ms;
+  }
+  50% {
+    opacity: 0.5;
+    -webkit-transition: opacity 0.8s linear 0.8ms;
+    transition: opacity 0.8s linear 0.8ms;
+  }
+  100% {
+    opacity: 0.8;
+    -webkit-transition: opacity 1s linear 1s;
+    transition: opacity 1s linear 1s;
+  }
+}
+@keyframes opacity {
+  0% {
+    opacity: 0.2;
+    -webkit-transition: opacity 0.5s linear 0.5ms;
+    transition: opacity 0.5s linear 0.5ms;
+  }
+  50% {
+    opacity: 0.5;
+    -webkit-transition: opacity 0.8s linear 0.8ms;
+    transition: opacity 0.8s linear 0.8ms;
+  }
+  100% {
+    opacity: 0.8;
+    -webkit-transition: opacity 1s linear 1s;
+    transition: opacity 1s linear 1s;
+  }
+}
+@-webkit-keyframes slide {
+  0% {
+    -webkit-transform: slide(0);
+    transform: slide(0);
+    scroll-margin-right: 0px;
+    -webkit-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
+  }
+  50% {
+    -webkit-transform: slide(1);
+    transform: slide(1);
+    scroll-margin-right: 10px;
+    -webkit-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
+  }
+  100% {
+    -webkit-transform: slide(1.25);
+    transform: slide(1.25);
+    scroll-margin-right: 20px;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+}
+@keyframes slide {
+  0% {
+    -webkit-transform: slide(0);
+    transform: slide(0);
+    -webkit-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
+  }
+  50% {
+    -webkit-transform: slide(1);
+    transform: slide(1);
+    -webkit-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
+  }
+  100% {
+    -webkit-transform: slide(1.25);
+    transform: slide(1.25);
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+}
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate 0deg;
+    -webkit-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate 180deg;
+    -webkit-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+    -webkit-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+  }
+}
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate 0deg;
+    -webkit-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate 180deg;
+    -webkit-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+    -webkit-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+  }
+}
+main .commande {
   display: block;
 }
-main section.commande button {
+main .commande button {
   display: block;
-  width: 70%;
+  width: 60%;
   height: 60px;
   border-radius: 60px;
   border: 2px solid #dad6d6;
-  background: #99e2d0;
   background: linear-gradient(90deg, #99e2d0 0%, #ff79da 0%, #9356dc 92%);
   box-shadow: 1px 1px 1px #b8b6b6;
   margin: auto;
 }
-main section.commande button span {
+main .commande button:hover {
+  cursor: pointer;
+  background: linear-gradient(90deg, #fface8 0%, #ae80e5 100%);
+  box-shadow: 0.3em 0.3em 0.5em #817f7f;
+}
+main .commande button a {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -208,12 +397,81 @@ footer nav ul li {
   flex-wrap: nowrap;
   flex-direction: row;
   align-items: center;
+  cursor: pointer;
 }
 footer nav ul li a {
   color: #fff;
 }
+footer nav ul li a:hover {
+  border-bottom: 1px solid #fff;
+}
 footer nav ul li a i {
   margin-right: 10px;
+}
+
+@media only screen and (min-width: 380px) {
+  main .menu .plat .alignement {
+    display: flex;
+  }
+  main .menu .plat .alignement:hover .ingredient {
+    width: 78%;
+  }
+}
+@media only screen and (min-width: 480px) {
+  .menu .plat .alignement:hover .ingredient {
+    width: 82%;
+  }
+
+  section.commande button {
+    width: 30%;
+  }
+}
+@media only screen and (min-width: 800px) {
+  .menu {
+    margin-bottom: 20px;
+  }
+  .menu .entree {
+    display: flex;
+  }
+  .menu .entree .plat {
+    width: 100%;
+    margin: 0px 5px;
+  }
+  .menu .plats {
+    display: flex;
+  }
+  .menu .plats .plat {
+    width: 100%;
+    margin: 0px 5px;
+  }
+  .menu .desserts {
+    display: flex;
+  }
+  .menu .desserts .plat {
+    width: 100%;
+    margin: 0px 5px;
+  }
+
+  footer nav ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: space-around;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 100px;
+  }
+}
+@media only screen and (min-width: 1050px) {
+  .menu .plat .alignement:hover .ingredient {
+    width: 88%;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  body {
+    max-width: 1600px;
+    margin: auto;
+  }
 }
 
 /*# sourceMappingURL=resto.css.map */

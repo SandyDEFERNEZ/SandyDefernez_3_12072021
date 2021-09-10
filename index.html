@@ -11,16 +11,18 @@
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+        
         <script src="https://kit.fontawesome.com/e10814a45c.js" crossorigin="anonymous"></script> 
     
     </head>
 
     <body>
 
-                                <!--Chargement-->
+                        <!--Chargement du loader-->
             
         <section class="chargement">
             <div class="loader loader-circles"></div>
+            Loading...
         </section>
         
                     <!--Logo-->
@@ -55,102 +57,126 @@
             </section>
 
                     <!--Fonctionnement-->
-            <section class="fonction">
+            <section class="fonctionnement">
                 <h2>Fonctionnement</h2>
                 
                 <div class="choix">
-                    <div class="pastille">
-                        <p>1</p>
+                    <div class="choisir">
+                        <div class="pastille">
+                            <p>1</p>
+                        </div>
+                        <span class="icon">
+                            <i class="fas fa-mobile-alt"></i>
+                            <p>Choisissez un restaurant</p>
+                        </span>
                     </div>
-                    <span class="icon">
-                        <i class="fas fa-mobile-alt"></i>
-                        <p>Choisissez un restaurant</p>
-                    </span>
-                </div>
 
-                <div class="choix">
-                    <div class="pastille">
-                        <p>2</p>
+                    <div class="choisir">
+                        <div class="pastille">
+                            <p>2</p>
+                        </div>
+                        <span class="icon">
+                            <i class="fas fa-list-ul"></i>
+                            <p>Composez votre menu</p>
+                        </span>
                     </div>
-                    <span class="icon">
-                        <i class="fas fa-list-ul"></i>
-                        <p>Composez votre menu</p>
-                    </span>
-                </div>
 
-                <div class="choix">
-                    <div class="pastille">
-                        <p>3</p>
+                    <div class="choisir">
+                        <div class="pastille">
+                            <p>3</p>
+                        </div>
+                        <span class="icon">
+                            <i class="fas fa-store"></i>
+                            <p>Dégustez au restaurant</p>
+                        </span>
                     </div>
-                    <span class="icon">
-                        <i class="fas fa-store"></i>
-                        <p>Dégustez au restaurant</p>
-                    </span>
-                </div>
-            
+                </div>            
             </section>
 
                     <!--Restaurants-->
             <section class="restaurant">
                 <h2>Restaurants</h2>
-                <div class="picture">   
-                    <a href="resto.html" class="resto">
-                        <span class="cadre">
-                            <img src="img/menilmontant.jpg" alt="la palette du goût"/>
-                        </span>
-                        <span class="texte">
-                            <span class="nom">La palette du goût</span>
-                            <span class="lieu">Ménilmontant</span>
-                        </span>
-                        <span class="coeur">
-                            <i class="far fa-heart"></i> 
-                        </span>
-                        <span class="nouveau">Nouveau</span>
-                    </a>
-                </div>
-                <div class="picture">
-                    <a href="resto.html" class="resto">
-                        <span class="cadre">
-                            <img src="img/charonne.jpg" alt="la note enchantée"/>
-                        </span>
-                        <span class="texte">
-                            <span class="nom">La note enchantée</span>
-                            <span class="lieu">Charonne</span>
-                        </span>
-                        <span class="coeur">
-                            <i class="far fa-heart"></i> 
-                        </span>
-                        <span class="nouveau">Nouveau</span>
-                    </a>
-                </div>
-                <div class="picture">
-                    <a href="resto.html" class="resto">
-                        <span class="cadre">
-                            <img src="img/cite-rouge.jpg" alt="A la française"/>
-                        </span>
-                        <span class="texte">
-                            <span class="nom">A la française</span>
-                            <span class="lieu">Cité-Rouge</span>
-                        </span>
-                        <span class="coeur">
-                            <i class="far fa-heart"></i> 
-                        </span>
-                    </a>
-                </div>
-                <div class="picture">
-                    <a href="resto.html" class="resto">
-                        <span class="cadre">
-                            <img src="img/mericourt.jpg" alt="Le delice des sens"/>
-                        </span>
-                        <span class="texte">
-                            <span class="nom">Le délice des sens</span>
-                            <span class="lieu">Folie-Méricourt</span>
-                        </span>
-                        <span class="coeur">
-                            <i class="far fa-heart"></i> 
-                        </span>
-                    </a>
-                </div>
+
+                <div class="image">
+                    <div class="picture">   
+                        <a href="resto-palette.html" class="resto">
+                            <span class="cadre">
+                                <img src="img/menilmontant.jpg" alt="la palette du goût"/>
+                            </span>
+                            <span class="texte">
+                                <span class="nom">La palette du goût</span>
+                                <span class="lieu">Ménilmontant</span>
+                            </span>
+                            <span class="coeur">
+                                <span class="coeur-vide">
+                                    <i class="far fa-heart"></i> 
+                                </span>
+                                <span class="coeur-plein">
+                                    <i class="fas fa-heart"></i>
+                                </span>
+                            </span>
+                            <span class="nouveau">Nouveau</span>
+                        </a>
+                    </div>
+                    <div class="picture">
+                        <a href="resto-enchante.html" class="resto">
+                            <span class="cadre">
+                                <img src="img/charonne.jpg" alt="la note enchantée"/>
+                            </span>
+                            <span class="texte">
+                                <span class="nom">La note enchantée</span>
+                                <span class="lieu">Charonne</span>
+                            </span>
+                            <span class="coeur">
+                                <span class="coeur-vide">
+                                    <i class="far fa-heart"></i> 
+                                </span>
+                                <span class="coeur-plein">
+                                    <i class="fas fa-heart"></i>
+                                </span> 
+                            </span>
+                            <span class="nouveau">Nouveau</span>
+                        </a>
+                    </div>
+                    <div class="picture">
+                        <a href="resto-francaise.html" class="resto">
+                            <span class="cadre">
+                                <img src="img/cite-rouge.jpg" alt="A la française"/>
+                            </span>
+                            <span class="texte">
+                                <span class="nom">A la française</span>
+                                <span class="lieu">Cité-Rouge</span>
+                            </span>
+                            <span class="coeur">
+                                <span class="coeur-vide">
+                                    <i class="far fa-heart"></i> 
+                                </span>
+                                <span class="coeur-plein">
+                                    <i class="fas fa-heart"></i>
+                                </span> 
+                            </span>
+                        </a>
+                    </div>
+                    <div class="picture">
+                        <a href="resto-delice.html" class="resto">
+                            <span class="cadre">
+                                <img src="img/mericourt.jpg" alt="Le delice des sens"/>
+                            </span>
+                            <span class="texte">
+                                <span class="nom">Le délice des sens</span>
+                                <span class="lieu">Folie-Méricourt</span>
+                            </span>
+                            <span class="coeur">
+                                <span class="coeur-vide">
+                                    <i class="far fa-heart"></i> 
+                                </span>
+                                <span class="coeur-plein">
+                                    <i class="fas fa-heart"></i>
+                                </span> 
+                            </span>
+                        </a>
+                    </div>
+                <!-- </div> -->
             </section>
         </main>
 
