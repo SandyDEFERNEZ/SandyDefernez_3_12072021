@@ -44,8 +44,7 @@ body {
             border-top-color: $white;
             -webkit-animation:spin 1s linear infinite;
             animation:spin 1s linear infinite;
-        
-
+            
             &:after{
                 content: '';
                 position: absolute;
@@ -57,6 +56,7 @@ body {
                 border: 3px solid $color-secondary;
                 border-top-color: $white;
                 opacity:0.8;
+                
                 -webkit-animation:spin 3s linear infinite;
                 animation:spin 3s linear infinite;
             }
@@ -71,8 +71,8 @@ body {
                 border-radius: 50px;
                 border: 3px solid $black;
                 border-top-color: $white;
-                opacity:0.4;
-                
+                opacity:0.4;                
+
                 -webkit-animation:spin 5s linear infinite;
                 animation:spin 5s linear infinite;
             }
@@ -258,7 +258,6 @@ main {
                     background-color: $clair;
                     box-shadow: $shadow-lighten;
                     border-radius: 10px;
-                    // justify-content: center;
                     align-items: center;
                     padding: 15px 20px 15px 10px;
                     margin: 10px 20px 20px 15px;
@@ -290,7 +289,7 @@ main {
         display: block;
         justify-content: center;
         background-color: $clair; 
-        border: 1px solid $clair;
+        border: 1px solid $clair1;
         padding: 20px 0px 30px 10px;
         
         h2 {
@@ -416,37 +415,32 @@ main {
             }
         }
 
+
 footer {
     background-color: $black;
     color: $white;
     padding: 25px 25px 35px 25px;
-
     h1 {
         font-family: shrikhand;
         font-size: 18px;
         color: $white;
         margin-bottom: 10px;
     }
-   
     nav {
         display: block;
         ul {
             display: flex;                    
-            flex-direction: column; 
-            
+            flex-direction: column;           
             li {
                 display: flex;
                 flex-wrap: nowrap;
                 align-items: center;
                 cursor: pointer;
-
                 a {
                     color: $white;
-
                     &:hover {
                         border-bottom: 1px solid $white;
                     }
-
                     i {
                         margin-right: 10px;
                     }

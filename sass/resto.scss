@@ -170,7 +170,6 @@ main {
                 &:hover {
                     cursor: pointer;
                     overflow: hidden;
-                    
                     -webkit-animation: slide .5s linear;
                     animation: slide .5s linear;
                     
@@ -180,7 +179,6 @@ main {
                         top: 0px;
                         right: 0px;
                         bottom: 0px;
-                    
                         i {
                             -webkit-animation: slide linear;
                             animation: slide linear;
@@ -448,7 +446,6 @@ footer {
             .plat {
                 .alignement {
                     display: flex;
-
                     &:hover {
                         .ingredient {
                             width: 78%;
