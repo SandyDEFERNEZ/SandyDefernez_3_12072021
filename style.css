@@ -171,9 +171,10 @@ section.reservation {
   padding: 25px 25px 60px 25px;
   background-color: #eeecec;
 }
-section.reservation h1 {
+section.reservation h2 {
   text-align: center;
   font-weight: bold;
+  font-size: 26px;
 }
 section.reservation p {
   text-align: center;
@@ -267,7 +268,7 @@ section.reservation button span {
   display: block;
   justify-content: center;
   background-color: #eeecec;
-  border: 1px solid #eeecec;
+  border: 1px solid #f0ecec;
   padding: 20px 0px 30px 10px;
 }
 .restaurant h2 {
@@ -488,4 +489,4 @@ footer nav ul li a i {
   }
 }
 
-/*# sourceMappingURL=Style.css.map */
+/*# sourceMappingURL=style.css.map */

@@ -3,15 +3,6 @@
 @import "libs/mixins.scss";
 
 
-body {
-    h1, h2, h3{
-        color: $black;
-    }
-    p {
-        color: $black;
-        font-size: 16px;
-    }
-}
 
     section.chargement {
         display: flex;
@@ -179,9 +170,10 @@ main {
         align-content: center;
         padding: 25px 25px 60px 25px;
         background-color: $clair;
-        h1 {
+        h2 {
             text-align: center;
             font-weight: bold;
+            font-size: 26px;
         }
         p {
             text-align: center;
