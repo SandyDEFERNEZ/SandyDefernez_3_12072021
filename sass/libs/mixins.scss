@@ -4,11 +4,12 @@
 }
 
 @mixin gradient-color {
-    background: linear-gradient(90deg, $color-secondary 0%, $color-primary 100%);
+    background: rgb(147,86,220);
+    background: linear-gradient(360deg, $color-primary 0%, rgba(218,86,220,1) 48%, $color-secondary 100%);
 }
 
-@mixin lighten-color {
-    background: linear-gradient(90deg, lighten( $color-secondary, 10%) 0%, lighten( $color-primary, 10%) 100%);
+@mixin lighten-color {    
+    background: linear-gradient(360deg, lighten($color-primary, 10%) 0%, lighten(rgba(218,86,220,1), 10%) 48%, lighten($color-secondary, 10%) 100%);
 }
 
 @mixin img-contain {
