@@ -353,13 +353,13 @@ main {
 
         @-webkit-keyframes rotate {
             0% {
-                -webkit-transform: rotate(0deg);
-                transform: rotate (0deg);
+                -webkit-transform: rotate(0);
+                transform: rotate(0);
                 
             }
             50% {
                 -webkit-transform: rotate(90deg);
-                transform: rotate (90deg);
+                transform: rotate(90deg);
                 
             }
             100% {
@@ -370,12 +370,12 @@ main {
         }
         @keyframes rotate {
             0% {
-                -webkit-transform: rotate(0deg);
-                transform: rotate (0deg);
+                -webkit-transform: rotate(0);
+                transform: rotate(0);
             }
             50% {
                 -webkit-transform: rotate(90deg);
-                transform: rotate (90deg);    
+                transform: rotate(90deg);    
             }
             100% {
                 -webkit-transform: rotate(180deg);
@@ -396,18 +396,13 @@ main {
             @include gradient-color;
             box-shadow: $shadow-lighten;
             margin: auto;
+            font-size: 14px;
+            color: $white; 
 
             &:hover {
                 cursor: pointer;
                 @include lighten-color;
                 box-shadow: $shadow-darken;
-            }
-            a {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                font-size: 14px;
-                color: $white;                         
             }
         }
     }
