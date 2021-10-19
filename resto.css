@@ -363,8 +363,12 @@ main .commande {
   display: block;
 }
 main .commande button {
-  display: block;
-  width: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  width: 80%;
   height: 60px;
   border-radius: 60px;
   border: none;
@@ -433,7 +437,7 @@ footer nav ul li i {
     width: 78%;
   }
   main section.commande button {
-    width: 30%;
+    width: 60%;
   }
 }
 @media only screen and (min-width: 730px) {
@@ -495,7 +499,7 @@ footer nav ul li i {
     display: flex;
   }
   main .menu .entree .plat .alignement:hover .ingredient, main .menu .plats .plat .alignement:hover .ingredient, main .menu .desserts .plat .alignement:hover .ingredient {
-    width: 75%;
+    width: 70%;
   }
 }
 @media only screen and (min-width: 1200px) {

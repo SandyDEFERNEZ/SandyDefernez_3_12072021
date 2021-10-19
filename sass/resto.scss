@@ -388,8 +388,11 @@ main {
         display: block;
 
         button {
-            display: block;
-            width: 60%;
+            @include d-flex;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+            width: 80%;
             height: 60px;
             border-radius: 60px;
             border: none;
@@ -480,7 +483,7 @@ footer {
         }
         section.commande {    
             button {
-                width: 30%;
+                width: 60%;
             }
         }
     }
@@ -564,7 +567,7 @@ footer {
                         display: flex;
                         &:hover {
                             .ingredient {
-                                width: 75%;
+                                width: 70%;
                             }
                         }
                     }
