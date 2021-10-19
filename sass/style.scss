@@ -134,8 +134,8 @@ main {
           
     form {
         display: block;
-        border: 1px solid hsl(0, 7%, 92%);
-        background-color: hsl(0, 12%, 89%);
+        border-top: 4px solid rgb(216, 214, 214);
+        background-color: $top-gray;
         padding: 10px;
         
         .position {
@@ -153,9 +153,8 @@ main {
 
             input {
                 @include d-flex;
-                color: $black;
                 align-content: space-between;
-                background-color: hsl(0, 12%, 89%);
+                background-color: $top-gray;
                 font-weight: bold;
                 border: initial;
             }
@@ -255,8 +254,8 @@ main {
                     margin: 10px 20px 20px 15px;
                     &:hover {
                         cursor: pointer;
-                        background: lighten($color-primary, 30%);
-                        box-shadow: $shadow-darken;
+                        background: lighten($color-primary, 35%);
+                        box-shadow: $shadow-lighten;
 
                         i {
                             color: $color-primary;
@@ -265,7 +264,7 @@ main {
 
                     i {
                         padding: 0px 15px;
-                        color: $black;
+                        color: gray;
                         
                     }
                     p {
@@ -296,17 +295,19 @@ main {
                 background-color: $white;
                 position: relative;
                 border-radius: 20px;
-                box-shadow: 0.5em 0.5em 1em rgb(155 153 153 / 30%);
+                box-shadow: $shadow-lighten;
                 overflow: hidden;
 
                 &:hover {
                     cursor: pointer;
-                    -webkit-animation: scale .3s linear;
-                    animation: scale .3s linear;
+                    -webkit-animation: scale .5s linear;
+                    animation: scale .5s linear;
+                    box-shadow: $shadow-darken;
                 }
 
                 .resto {
                     display: block;
+                    
                     .cadre {
                         display: flex;
                         width: 100%;
@@ -335,18 +336,19 @@ main {
                         right: 15px;
                         opacity: initial;
                         border: 1px solid $color-terciary;
-                        color: $green;
+                        color: $green-darken;
+                        font-weight: bold;
                         background-color: $color-terciary;
                     }
                 }
                 @-webkit-keyframes scale {
-                    from {
+                    0% {
                         -webkit-transform: scale(1);
                         transform: scale(1);
                         -webkit-transition: .3s ease-in-out;
                         transition: .3s ease-in-out;
                     }
-                    to {
+                    100% {
                         -webkit-transform: scale(1.1);
                         transform: scale(1.1);
                         -webkit-transition: .5s ease-in-out;
@@ -354,13 +356,13 @@ main {
                     }
                 }
                 @keyframes scale {
-                    from {
+                    0% {
                         -webkit-transform: scale(1);
                         transform: scale(1);
                         -webkit-transition: .3s ease-in-out;
                         transition: .3s ease-in-out;
                     }
-                    to {
+                    100% {
                         -webkit-transform: scale(1.1);
                         transform: scale(1.1);
                         -webkit-transition: .5s ease-in-out;
@@ -406,10 +408,11 @@ main {
                     }
             }
         }
+    
 
 
 footer {
-    background-color: $black;
+    background-color: $black-lighten;
     color: $white;
     padding: 25px 25px 35px 25px;
     h1 {
@@ -422,20 +425,22 @@ footer {
         display: block;
         ul {
             display: flex;                    
-            flex-direction: column;           
+            flex-direction: column;
+                       
             li {
                 display: flex;
                 flex-wrap: nowrap;
                 align-items: center;
                 cursor: pointer;
+                padding-bottom: 10px;
                 a {
                     color: $white;
                     &:hover {
                         border-bottom: 1px solid $white;
                     }
-                    i {
-                        margin-right: 10px;
-                    }
+                }
+                i {
+                    margin-right: 10px;
                 }
             }
         }

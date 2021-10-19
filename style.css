@@ -135,8 +135,8 @@ main {
 
 form {
   display: block;
-  border: 1px solid #ece9e9;
-  background-color: #e6e0e0;
+  border-top: 4px solid #d8d6d6;
+  background-color: rgba(233, 233, 233, 0.931);
   padding: 10px;
 }
 form .position {
@@ -154,9 +154,8 @@ form .position label {
 form .position input {
   display: flex;
   flex-wrap: wrap;
-  color: #000;
   align-content: space-between;
-  background-color: #e6e0e0;
+  background-color: rgba(233, 233, 233, 0.931);
   font-weight: bold;
   border: initial;
 }
@@ -169,7 +168,7 @@ section.reservation {
   align-items: center;
   align-content: center;
   padding: 25px 25px 60px 25px;
-  background-color: #eeecec;
+  background-color: #f6f6f6;
 }
 section.reservation h2 {
   text-align: center;
@@ -193,13 +192,13 @@ section.reservation button {
   border: none;
   background: #9356dc;
   background: linear-gradient(360deg, #9356dc 0%, #da56dc 48%, #FF79DA 100%);
-  box-shadow: 0.2em 0.2em 0.5em #c4c0c0;
+  box-shadow: 0.1em 0.5em 0.9em #b6b6b6;
   padding: 15px;
 }
 section.reservation button:hover {
   cursor: pointer;
   background: linear-gradient(360deg, #ae80e5 0%, #e380e5 48%, #fface8 100%);
-  box-shadow: 0.3em 0.3em 0.5em #817f7f;
+  box-shadow: 0.1em 0.5em 0.9em #a0a0a0;
 }
 section.reservation button span {
   display: flex;
@@ -242,8 +241,8 @@ section.reservation button span {
 .fonctionnement .choix .choisir .icon {
   display: flex;
   flex-wrap: nowrap;
-  background-color: #eeecec;
-  box-shadow: 0.2em 0.2em 0.5em #c4c0c0;
+  background-color: #f6f6f6;
+  box-shadow: 0.1em 0.5em 0.9em #b6b6b6;
   border-radius: 10px;
   align-items: center;
   padding: 15px 20px 15px 10px;
@@ -251,15 +250,15 @@ section.reservation button span {
 }
 .fonctionnement .choix .choisir .icon:hover {
   cursor: pointer;
-  background: #e4d5f6;
-  box-shadow: 0.3em 0.3em 0.5em #817f7f;
+  background: #f2eafb;
+  box-shadow: 0.1em 0.5em 0.9em #b6b6b6;
 }
 .fonctionnement .choix .choisir .icon:hover i {
   color: #9356dc;
 }
 .fonctionnement .choix .choisir .icon i {
   padding: 0px 15px;
-  color: #000;
+  color: gray;
 }
 .fonctionnement .choix .choisir .icon p {
   font-weight: bold;
@@ -268,7 +267,7 @@ section.reservation button span {
 .restaurant {
   display: block;
   justify-content: center;
-  background-color: #eeecec;
+  background-color: #f6f6f6;
   border: 1px solid #f0ecec;
   padding: 20px 0px 30px 10px;
 }
@@ -282,13 +281,14 @@ section.reservation button span {
   background-color: #fff;
   position: relative;
   border-radius: 20px;
-  box-shadow: 0.5em 0.5em 1em rgba(155, 153, 153, 0.3);
+  box-shadow: 0.1em 0.5em 0.9em #b6b6b6;
   overflow: hidden;
 }
 .restaurant .image .picture:hover {
   cursor: pointer;
-  -webkit-animation: scale 0.3s linear;
-  animation: scale 0.3s linear;
+  -webkit-animation: scale 0.5s linear;
+  animation: scale 0.5s linear;
+  box-shadow: 0.1em 0.5em 0.9em #a0a0a0;
 }
 .restaurant .image .picture .resto {
   display: block;
@@ -321,17 +321,18 @@ section.reservation button span {
   right: 15px;
   opacity: initial;
   border: 1px solid #99E2D0;
-  color: #99E2D0;
+  color: green;
+  font-weight: bold;
   background-color: #99E2D0;
 }
 @-webkit-keyframes scale {
-  from {
+  0% {
     -webkit-transform: scale(1);
     transform: scale(1);
     -webkit-transition: 0.3s ease-in-out;
     transition: 0.3s ease-in-out;
   }
-  to {
+  100% {
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
     -webkit-transition: 0.5s ease-in-out;
@@ -339,13 +340,13 @@ section.reservation button span {
   }
 }
 @keyframes scale {
-  from {
+  0% {
     -webkit-transform: scale(1);
     transform: scale(1);
     -webkit-transition: 0.3s ease-in-out;
     transition: 0.3s ease-in-out;
   }
-  to {
+  100% {
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
     -webkit-transition: 0.5s ease-in-out;
@@ -383,7 +384,7 @@ section.reservation button span {
 }
 
 footer {
-  background-color: #000;
+  background-color: #333333;
   color: #fff;
   padding: 25px 25px 35px 25px;
 }
@@ -405,6 +406,7 @@ footer nav ul li {
   flex-wrap: nowrap;
   align-items: center;
   cursor: pointer;
+  padding-bottom: 10px;
 }
 footer nav ul li a {
   color: #fff;
@@ -412,7 +414,7 @@ footer nav ul li a {
 footer nav ul li a:hover {
   border-bottom: 1px solid #fff;
 }
-footer nav ul li a i {
+footer nav ul li i {
   margin-right: 10px;
 }
 
