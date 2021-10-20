@@ -196,7 +196,7 @@ main section.menu .plat .alignement:hover .icon i {
   animation: rotate 0.3s linear 0.1s;
 }
 main section.menu .plat .alignement:hover .ingredient {
-  width: 60%;
+  width: 70%;
 }
 main section.menu .plat .alignement:hover .prix {
   -webkit-animation: slide-left 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94) backwards;
