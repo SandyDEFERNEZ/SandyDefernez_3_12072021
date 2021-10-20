@@ -387,25 +387,26 @@ main .commande button:hover {
   background: linear-gradient(360deg, #ae80e5 0%, #e380e5 48%, #fface8 100%);
   box-shadow: 0.1em 0.5em 0.9em #a0a0a0;
 }
-main footer {
+
+footer {
   background-color: #333333;
   color: #fff;
   padding: 25px 25px 35px 25px;
 }
-main footer h1 {
+footer h1 {
   font-family: shrikhand;
   font-size: 18px;
   color: #fff;
   margin-bottom: 10px;
 }
-main footer nav {
+footer nav {
   display: block;
 }
-main footer nav ul {
+footer nav ul {
   display: flex;
   flex-direction: column;
 }
-main footer nav ul li {
+footer nav ul li {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
@@ -413,78 +414,80 @@ main footer nav ul li {
   cursor: pointer;
   padding-bottom: 10px;
 }
-main footer nav ul li a {
+footer nav ul li a {
   color: #fff;
 }
-main footer nav ul li a:hover {
+footer nav ul li a:hover {
   border-bottom: 1px solid #fff;
 }
-main footer nav ul li i {
+footer nav ul li i {
   margin-right: 10px;
 }
+
 @media only screen and (min-width: 380px) {
-  main main .menu .plat .alignement {
+  main .menu .plat .alignement {
     display: flex;
   }
-  main main .menu .plat .alignement:hover .ingredient {
+  main .menu .plat .alignement:hover .ingredient {
     width: 70%;
   }
 }
 @media only screen and (min-width: 411px) {
-  main main .menu .plat .alignement {
+  main .menu .plat .alignement {
     display: flex;
   }
-  main main .menu .plat .alignement:hover .ingredient {
+  main .menu .plat .alignement:hover .ingredient {
     width: 78%;
   }
-  main main section.commande button {
+  main section.commande button {
     width: 60%;
   }
 }
 @media only screen and (min-width: 730px) {
-  main main .menu {
+  main .menu {
     margin-bottom: 20px;
   }
-  main main .menu .entree {
+  main .menu .entree {
     display: flex;
   }
-  main main .menu .entree .plat {
+  main .menu .entree .plat {
     width: 100%;
     margin: 0px 5px;
   }
-  main main .menu .entree .plat .alignement {
+  main .menu .entree .plat .alignement {
     display: flex;
   }
-  main main .menu .entree .plat .alignement:hover .ingredient {
+  main .menu .entree .plat .alignement:hover .ingredient {
     width: 60%;
   }
-  main main .menu .plats {
+  main .menu .plats {
     display: flex;
   }
-  main main .menu .plats .plat {
+  main .menu .plats .plat {
     width: 100%;
     margin: 0px 5px;
   }
-  main main .menu .plats .plat .alignement {
+  main .menu .plats .plat .alignement {
     display: flex;
   }
-  main main .menu .plats .plat .alignement:hover .ingredient {
+  main .menu .plats .plat .alignement:hover .ingredient {
     width: 60%;
   }
-  main main .menu .desserts {
+  main .menu .desserts {
     display: flex;
   }
-  main main .menu .desserts .plat {
+  main .menu .desserts .plat {
     width: 100%;
     margin: 0px 5px;
   }
-  main main .menu .desserts .plat .alignement {
+  main .menu .desserts .plat .alignement {
     display: flex;
   }
-  main main .menu .desserts .plat .alignement:hover .ingredient {
+  main .menu .desserts .plat .alignement:hover .ingredient {
     width: 60%;
   }
-  main footer nav ul {
+
+  footer nav ul {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -495,15 +498,15 @@ main footer nav ul li i {
   }
 }
 @media only screen and (min-width: 1050px) {
-  main main .menu .entree .plat .alignement, main main .menu .plats .plat .alignement, main main .menu .desserts .plat .alignement {
+  main .menu .entree .plat .alignement, main .menu .plats .plat .alignement, main .menu .desserts .plat .alignement {
     display: flex;
   }
-  main main .menu .entree .plat .alignement:hover .ingredient, main main .menu .plats .plat .alignement:hover .ingredient, main main .menu .desserts .plat .alignement:hover .ingredient {
+  main .menu .entree .plat .alignement:hover .ingredient, main .menu .plats .plat .alignement:hover .ingredient, main .menu .desserts .plat .alignement:hover .ingredient {
     width: 70%;
   }
 }
 @media only screen and (min-width: 1200px) {
-  main body {
+  body {
     max-width: 1600px;
     margin: auto;
   }

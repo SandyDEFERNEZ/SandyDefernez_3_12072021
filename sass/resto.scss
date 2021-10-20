@@ -271,120 +271,120 @@ main {
     }
 
         
-        @-webkit-keyframes opacity {
-            0% {
-                opacity: 0;
-                margin-bottom: -50px;
-            }
-            50% {
-                opacity: .5;
-                margin-bottom: -25px
-            }
-            100% {
-                opacity: 1;
-                margin-bottom: 0px;
-            }
+    @-webkit-keyframes opacity {
+        0% {
+            opacity: 0;
+            margin-bottom: -50px;
         }
-        @keyframes opacity {
-            0% {
-                opacity: 0;
-                margin-bottom: -50px;
-            }
-            50% {
-                opacity: .5;
-                margin-bottom: -25px
-            }
-            100% {
-                opacity: 1;
-                margin-bottom: 0px;
-            }
+        50% {
+            opacity: .5;
+            margin-bottom: -25px
         }
+        100% {
+            opacity: 1;
+            margin-bottom: 0px;
+        }
+    }
+    @keyframes opacity {
+        0% {
+            opacity: 0;
+            margin-bottom: -50px;
+        }
+        50% {
+            opacity: .5;
+            margin-bottom: -25px
+        }
+        100% {
+            opacity: 1;
+            margin-bottom: 0px;
+        }
+    }
 
-        @-webkit-keyframes slide-left {
-            0% {
-                -webkit-transform: translateX(0);
-                transform: translateX(0);
-            }
-            100% {
-                -webkit-transform: translateX(-1px);
-                transform: translateX(-1px);     
-            }
+    @-webkit-keyframes slide-left {
+        0% {
+            -webkit-transform: translateX(0);
+            transform: translateX(0);
         }
-        @keyframes slide-left {
-            0% {
-                -webkit-transform: translateX(0);
-                transform: translateX(0);
-            }
-            100% {
-                -webkit-transform: translateX(-1px);
-                transform: translateX(-1px);          
-            }
+        100% {
+            -webkit-transform: translateX(-1px);
+            transform: translateX(-1px);     
         }
+    }
+    @keyframes slide-left {
+        0% {
+            -webkit-transform: translateX(0);
+            transform: translateX(0);
+        }
+        100% {
+            -webkit-transform: translateX(-1px);
+            transform: translateX(-1px);          
+        }
+    }
 
-        @-webkit-keyframes slide {
-            0% {
-                top: 0px;
-                right: -50px;
-                bottom: 0px;
-                -webkit-transform: translateX(0);
-                transform: translateX(0);
-            }
-            100% {
-                top: 0px;
-                right: 0px;
-                bottom: 0px;
-                -webkit-transform: translateX(-2px);
-                transform: translateX(-2px);          
-            }
+    @-webkit-keyframes slide {
+        0% {
+            top: 0px;
+            right: -50px;
+            bottom: 0px;
+            -webkit-transform: translateX(0);
+            transform: translateX(0);
         }
-        @keyframes slide {
-            0% {
-                top: 0px;
-                right: -50px;
-                bottom: 0px;
-                -webkit-transform: translateX(0);
-                transform: translateX(0);
-            }
-            100% {
-                top: 0px;
-                right: 0px;
-                bottom: 0px;
-                -webkit-transform: translateX(-2px);
-                transform: translateX(-2px);          
-            }
+        100% {
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            -webkit-transform: translateX(-2px);
+            transform: translateX(-2px);          
         }
+    }
+    @keyframes slide {
+        0% {
+            top: 0px;
+            right: -50px;
+            bottom: 0px;
+            -webkit-transform: translateX(0);
+            transform: translateX(0);
+        }
+        100% {
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            -webkit-transform: translateX(-2px);
+            transform: translateX(-2px);          
+        }
+    }
 
-        @-webkit-keyframes rotate {
-            0% {
-                -webkit-transform: rotate(0);
-                transform: rotate(0);
-                
-            }
-            50% {
-                -webkit-transform: rotate(90deg);
-                transform: rotate(90deg);
-                
-            }
-            100% {
-                -webkit-transform: rotate(180deg) ;
-                transform: rotate(180deg);
-                           
-            }
+    @-webkit-keyframes rotate {
+        0% {
+            -webkit-transform: rotate(0);
+            transform: rotate(0);
+            
         }
-        @keyframes rotate {
-            0% {
-                -webkit-transform: rotate(0);
-                transform: rotate(0);
-            }
-            50% {
-                -webkit-transform: rotate(90deg);
-                transform: rotate(90deg);    
-            }
-            100% {
-                -webkit-transform: rotate(180deg);
-                transform: rotate(180deg);               
-            }
+        50% {
+            -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+            
         }
+        100% {
+            -webkit-transform: rotate(180deg) ;
+            transform: rotate(180deg);
+                        
+        }
+    }
+    @keyframes rotate {
+        0% {
+            -webkit-transform: rotate(0);
+            transform: rotate(0);
+        }
+        50% {
+            -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);    
+        }
+        100% {
+            -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);               
+        }
+    }
     
     
     .commande {
@@ -412,7 +412,7 @@ main {
             }
         }
     }
-
+}
 
 footer {
     background-color: $black-lighten;
@@ -585,5 +585,4 @@ footer {
         max-width: 1600px;
         margin: auto;
     }
-}
 }
